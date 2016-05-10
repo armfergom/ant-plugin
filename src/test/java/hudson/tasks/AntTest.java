@@ -334,7 +334,7 @@ public class AntTest {
         ArgumentListBuilder builder_1_653 = Ant.toWindowsCommand(toWindowsCommand_1_653(new ArgumentListBuilder("ant.bat", "-Dfoo1=", "-Dfoo2=foovalue")));
 
         String[] current = builder_1_653.toCommandArray();
-        String[] expected = new String[] { "cmd.exe", "/C", "'\"ant.bat", "-Dfoo1=\"\"", "-Dfoo2=foovalue", "&&", "exit", "%%ERRORLEVEL%%\"'" };
+        String[] expected = new String[] { "cmd.exe", "/C", "\"ant.bat", "-Dfoo1=\"\"", "-Dfoo2=foovalue", "&&", "exit", "%%ERRORLEVEL%%\"" };
 
         assertTrue("[653] Assert that has the same number of arguments. current is " + current.length + " and expected is " + expected.length, current.length == expected.length);
         for (int i=0; i<current.length;i++) {
