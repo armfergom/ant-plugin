@@ -328,7 +328,8 @@ public class AntTest {
         return project;
     }
 
-    @Bug(33712)
+    @Issue("JENKINS-33712")
+    @Test
     public void testRegressionNoQuote() throws Exception {
         ArgumentListBuilder builder_1_653 = Ant.toWindowsCommand(toWindowsCommand_1_653(new ArgumentListBuilder("ant.bat", "-Dfoo1=", "-Dfoo2=foovalue")));
 
