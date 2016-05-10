@@ -304,6 +304,15 @@ public class AntTest {
         assertEquals(Result.FAILURE, build.getResult());
         r.assertLogContains("Unable to find build script", build);
     }
+    
+    @Test
+    public void emptyParameterTest() throws Exception {
+        FreeStyleProject project = createSimpleAntProject("", null, null, "property=");
+        
+        FreeStyleBuild build = project.scheduleBuild2(0).get();
+        
+        assertEquals(Result.SUCCESS, build.getResult());
+    }
 
     /**
      * Creates a FreeStyleProject with an Ant build step with parameters passed as parameter.
